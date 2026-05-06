@@ -1341,11 +1341,10 @@ stop_words = stopwords.words('english')
 tokenizer = TreebankWordTokenizer()
 
 data = [
-    "I love this product!",
-    "It's okay, nothing special.",
-    "Worst experience ever.",
-    "Very happy with the service.",
-    "Not worth the money."
+    "I watched the movie last night and it was a fantastic experience.",
+    "The storyline was engaging and the performances by the actors were outstanding.",
+    "The visuals and background music added great depth to the film",
+    "However, the second half felt a bit slow in some parts."
 ]
 
 def analyze_sentiment(text):
@@ -1372,8 +1371,7 @@ def preprocess(text):
 
     return " ".join(filtered_tokens)
 
-print("\n========== Sentiment Analysis Results ==========\n")
-
+print("Sentiment Analysis Result : \n")
 positive_count = 0
 negative_count = 0
 neutral_count = 0
@@ -1392,10 +1390,12 @@ for i, text in enumerate(data):
     print(f"Sentence {i+1}: {text}")
     print(f"Preprocessed: {cleaned_text}")
     print(f"Polarity Score: {round(polarity, 3)}")
-    print(f"Sentiment: {sentiment}")
-    print("-" * 60)
+    print(f"Sentiment: {sentiment}\n")
 
-print("\n========== Summary ==========")
+
+print("\n"*3)
+
+print("Summary of the analysis :")
 print(f"Positive: {positive_count}")
 print(f"Negative: {negative_count}")
 print(f"Neutral : {neutral_count}")
